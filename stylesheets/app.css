@@ -38,6 +38,7 @@ body > .navbar {
 
 .navbar .nav > li {
 	float: left;
+	list-style: none;
 }
 
 .navbar .nav > .active > a, 
