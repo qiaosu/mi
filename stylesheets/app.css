@@ -465,3 +465,9 @@ input[type="file"], input[type="image"], input[type="submit"], input[type="reset
 .download-btn {
 	padding: 20px 0;
 }
+
+.download-btn .btn-primary {
+  font-size: 20px;
+  line-height: 36px;
+  padding: 8px 20px;
+}
