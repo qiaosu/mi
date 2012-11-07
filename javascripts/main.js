@@ -4,6 +4,8 @@ $(document).ready(function() {
 	    	type: 'POST',
 	      	url: /*/\?dev/.test(window.location) ? */'http://localhost:4567', /*: 'http://bootstrap.herokuapp.com'*/
 	      	dataType: 'jsonp',
+	      	jsonp: 'callback',
+	      	async: false,
 	        params: {
 	          	source: 'klass**event'
 	        }
