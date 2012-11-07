@@ -7,7 +7,7 @@ define(function(require){
      * @return {Number} -1, 0, 1
      */
     return require("mi").util("isOutOfDate", function(dateStart, dateEnd, days){
-        var dateStart = dateStart, dateEnd = dateEnd, days = days || 2;
+        var dateStart = dateStart, dateEnd = dateEnd, days = days || 365;
         dateStart = dateStart.replace(/[-\.]/g, '/');
         dateEnd = dateEnd.replace(/[-\.]/g, '/');
         dateStartTime = new Date(dateStart);

@@ -1,5 +1,6 @@
 define(function(require){
-    return require("mi").helper("isString", function(theObject){
+    var _ = require("mi");
+    return _.helper("isString", function(theObject){
         return _.is("string", theObject);
     });
 })
