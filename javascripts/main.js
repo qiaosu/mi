@@ -3,9 +3,9 @@ $(document).ready(function() {
 		$.ajax({
 	    	type: 'POST',
 	      	url: /*/\?dev/.test(window.location) ? */'http://localhost:4567', /*: 'http://bootstrap.herokuapp.com'*/
-	      	dataType: 'jsonpi',
+	      	dataType: 'jsonp',
 	        params: {
-	          	source: ['klass','event']
+	          	source: 'klass**event'
 	        }
 	      })
 		e.preventDefault();
