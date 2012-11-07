@@ -18,6 +18,10 @@ body > .navbar {
 	background-repeat: repeat-x;
 	border-color: #252525;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+
+	-webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-fixed-top {
