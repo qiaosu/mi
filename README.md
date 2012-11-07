@@ -43,13 +43,22 @@ var Dialog = $.ui("Dialog", {
     appendTo : function(theTarget){
         theTarget.appendChild(this.dom);
     },
+    bind : function(){
+        E.on(this.dom, 'click', this.dialogClickHandler);
+    },
+    unbind : function(){
+        E.off(this.dom, 'click', this.dialogClickHandler);
+    },
     destroy : function(){
         while(this.dom.firstChild){
             this.removeChild(this.firstChild);
         }
+        this.unbind();
+        this.dom.parentNode.removeChild(this.dom);
     },
     initialize : function(dom){
         this.dom = dom;
+        this.bind();
     }
 });
 
@@ -76,6 +85,19 @@ dialog.on("destroy", function(){
     // clear all events
     this.off();
 });
+
+dialog.before("destroy", function(){
+   console.log('before destroy!');
+});
+
+dialog.after("destroy", function(){
+   console.log('after destroy!');
+});
+
+//1s后自动销毁dialog
+$.delay(function(){
+    dialog.destroy();
+}, 1000);
 ```
 ###create utils
 ```javascript
