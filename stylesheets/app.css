@@ -468,6 +468,7 @@ input[type="file"], input[type="image"], input[type="submit"], input[type="reset
 
 .download-btn {
 	padding: 20px 0;
+  margin-top: 20px;
 }
 
 .download-btn .btn-primary {
@@ -483,6 +484,11 @@ input[type="file"], input[type="image"], input[type="submit"], input[type="reset
 
 .form-item {
   margin: 10px 0 6px;
+}
+
+.form-item .item-explain {
+  color: #888;
+  font-size: 12px;
 }
 
 #main_content h3 {
