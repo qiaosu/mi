@@ -3,6 +3,7 @@
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
+	margin-top: 41px;
 }
 
 body > .navbar {
