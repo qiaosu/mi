@@ -26,6 +26,11 @@ mi.library
 ```javascript
 var $ = require("mi");
 
+
+//可以赋值给Dialog变量，也可以不用赋值，只声明
+// $.ui("Dialog", {});
+
+//通常做法
 var Dialog = $.ui("Dialog", {
     dom : null,
     type : "Dialog",
@@ -48,7 +53,11 @@ var Dialog = $.ui("Dialog", {
     }
 });
 
+//通常用法
 var dialog = new Dialog(document.createElement("div"));
+
+//也可以
+//var dialog = new ($.ui("Dialog"))(document.createElement("div"));
 
 var title = document.createElement("h3");
     title.innerHTML = "title";
