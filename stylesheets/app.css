@@ -470,6 +470,7 @@ input[type="file"], input[type="image"], input[type="submit"], input[type="reset
   font-size: 20px;
   line-height: 36px;
   padding: 8px 20px;
+  margin-right: 10px;
 }
 
 .form-group {
@@ -478,4 +479,8 @@ input[type="file"], input[type="image"], input[type="submit"], input[type="reset
 
 .form-item {
   margin: 10px 0 6px;
+}
+
+#main_content h3 {
+  margin: 20px 0 0;
 }
