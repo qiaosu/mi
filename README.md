@@ -11,7 +11,7 @@
 
 ##example
 
-        ### create components
+### create components
         var $ = require("core");
 
         var Window = $.ui("window", {
@@ -56,7 +56,7 @@
             this.off();
         });
 
-        ###create utils
+###create utils
         /**
         * @param {String} toArray
         * @param {Function}
@@ -75,7 +75,7 @@
 
 
 
-        ###create helper
+###create helper
         $.helper("isString", function(theObject){
             return $.is("string", theObject);
         })
