@@ -3,10 +3,10 @@
 
 
 ##namespace
-        core.utils<br />
-        core.components<br />
-        core.library<br />
-        core.helper<br />
+        core.utils
+        core.components
+        core.library
+        core.helper
 
 
 ##example
