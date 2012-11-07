@@ -244,6 +244,10 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+	width: auto;
+}
+
 .radio input[type="radio"], .checkbox input[type="checkbox"] {
 	float: left;
 	margin-left: -20px;
