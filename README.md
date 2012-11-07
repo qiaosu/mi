@@ -13,49 +13,54 @@
 
 ### create components
 
-<pre><code>var $ = require("core");
+        var $ = require("core");
 
-var Window = $.ui("window", {
-        dom : null,
-        type : "window",
-        addChild : function(child){
-            this.dom.addChild(child);
-        },
-        removeChild : function(child){
-            this.dom.removeChild(child);
-        },
-        appendTo : function(theTarget){
-            theTarget.appendChild(this.dom);
-        },
-        destroy : function(){
-            while(this.dom.firstChild){
-                this.removeChild(this.firstChild);
-            }
-        },
-        initialize : function(dom){
-            this.dom = dom;
-        }
-});
+        var Dialog = $.ui("Dialog", {
+                dom : null,
+                type : "window",
+                addChild : function(child){
+                    this.dom.addChild(child);
+                },
+                removeChild : function(child){
+                    this.dom.removeChild(child);
+                },
+                appendTo : function(theTarget){
+                    theTarget.appendChild(this.dom);
+                },
+                destroy : function(){
+                    while(this.dom.firstChild){
+                        this.removeChild(this.firstChild);
+                    }
+                },
+                initialize : function(dom){
+                    this.dom = dom;
+                }
+        });
 
-var window = new Window(document.createElement("div"));
+        var dialog = new Dialog(document.createElement("div"));
 
-var title = document.createElement("h3");
-    title.innerHTML = "title";
+        var title = document.createElement("h3");
+            title.innerHTML = "title";
 
-var body = document.createElement("div");
-    body.innerHTML = "body";
+        var body = document.createElement("div");
+            body.innerHTML = "body";
 
-window.addChild(title);
+        dialog.addChild(title);
 
-window.addChild(body);
+        dialog.addChild(body);
 
-window.appendTo(document.body);
+        dialog.appendTo(document.body);
 
-window.on("destroy", function(){
-    console.log('window destroyed!');
-    // clear all events
-    this.off();
-});</code></pre>
+        dialog.on("destroy", function(){
+            console.log('dialog destroyed!');
+            // clear all events
+            this.off();
+        });
+
+        //1s后销毁window
+        $.delay(function(){
+            dialog.destroy();
+        }, 1000);
 
 ###create utils
         /**
