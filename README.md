@@ -11,7 +11,7 @@ mi.helper
 mi.events
 ```
 
-##static method
+##static methods
 ```javascript
 mi.util
 mi.ui
@@ -22,7 +22,7 @@ mi.library
 
 ##example
 
-### create components
+### create Dialog components
 ```javascript
 var $ = require("mi");
 
@@ -78,30 +78,30 @@ var title = document.createElement("h3");
 var body = document.createElement("div");
     body.innerHTML = "body";
 
-dialog.addChild(title);
+    dialog.addChild(title);
 
-dialog.addChild(body);
+    dialog.addChild(body);
 
-dialog.appendTo(document.body);
+    dialog.appendTo(document.body);
 
-dialog.on("destroy", function(){
-    console.log('dialog destroyed!');
-    // clear all events
-    this.off();
-});
+    dialog.on("destroy", function(){
+        console.log('dialog destroyed!');
+        // clear all events
+        this.off();
+    });
 
-dialog.before("destroy", function(){
-   console.log('before destroy!');
-});
+    dialog.before("destroy", function(){
+       console.log('before destroy!');
+    });
 
-dialog.after("destroy", function(){
-   console.log('after destroy!');
-});
+    dialog.after("destroy", function(){
+       console.log('after destroy!');
+    });
 
-//1s后自动销毁dialog
-$.delay(function(){
-    dialog.destroy();
-}, 1000);
+    //1s后自动销毁dialog
+    $.delay(function(){
+        dialog.destroy();
+    }, 1000);
 ```
 ###create utils
 ```javascript
@@ -132,7 +132,3 @@ $.helper("isString", function(theObject){
 //使用
 console.log(isString(123));  // false
 ```
-
-
-
-        
