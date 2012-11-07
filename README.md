@@ -12,7 +12,8 @@
 ##example
 
 ### create components
-        var $ = require("core");
+
+        <pre><code>var $ = require("core");
 
         var Window = $.ui("window", {
                 dom : null,
@@ -54,7 +55,7 @@
             console.log('window destroyed!');
             // clear all events
             this.off();
-        });
+        });</code></pre>
 
 ###create utils
         /**
