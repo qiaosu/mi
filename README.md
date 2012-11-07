@@ -3,59 +3,61 @@
 
 
 ##namespace
-        core.utils
-        core.components
-        core.library
-        core.helper
-
+```javascript
+core.utils
+core.components
+core.library
+core.helper
+```
 
 ##example
 
 ### create components
-        var $ = require("core");
+```javascript
+var $ = require("core");
 
-        var Window = $.ui("window", {
-                dom : null,
-                type : "window",
-                addChild : function(child){
-                    this.dom.addChild(child);
-                },
-                removeChild : function(child){
-                    this.dom.removeChild(child);
-                },
-                appendTo : function(theTarget){
-                    theTarget.appendChild(this.dom);
-                },
-                destroy : function(){
-                    while(this.dom.firstChild){
-                        this.removeChild(this.firstChild);
-                    }
-                },
-                initialize : function(dom){
-                    this.dom = dom;
-                }
-        });
+var Window = $.ui("window", {
+    dom : null,
+    type : "window",
+    addChild : function(child){
+        this.dom.addChild(child);
+    },
+    removeChild : function(child){
+        this.dom.removeChild(child);
+    },
+    appendTo : function(theTarget){
+        theTarget.appendChild(this.dom);
+    },
+    destroy : function(){
+        while(this.dom.firstChild){
+            this.removeChild(this.firstChild);
+        }
+    },
+    initialize : function(dom){
+        this.dom = dom;
+    }
+});
 
-        var window = new Window(document.createElement("div"));
+var window = new Window(document.createElement("div"));
 
-        var title = document.createElement("h3");
-            title.innerHTML = "title";
+var title = document.createElement("h3");
+    title.innerHTML = "title";
 
-        var body = document.createElement("div");
-            body.innerHTML = "body";
+var body = document.createElement("div");
+    body.innerHTML = "body";
 
-        window.addChild(title);
+window.addChild(title);
 
-        window.addChild(body);
+window.addChild(body);
 
-        window.appendTo(document.body);
+window.appendTo(document.body);
 
-        window.on("destroy", function(){
-            console.log('window destroyed!');
-            // clear all events
-            this.off();
-        });
-
+window.on("destroy", function(){
+    console.log('window destroyed!');
+    // clear all events
+    this.off();
+});
+```
 ###create utils
         /**
         * @param {String} toArray
