@@ -79,8 +79,7 @@ h1 {
 }
 
 h2 {
-  padding-bottom: 10px;
-  font-size: 32px;
+  font-size: 28px;
   background: url('../images/bg_hr.png') repeat-x bottom;
 }
 
@@ -315,7 +314,7 @@ Full-Width Styles
 
 #project_tagline {
   color: #fff;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
   background: none;
   text-shadow: #111 0px 0px 10px;
@@ -362,7 +361,7 @@ Full-Width Styles
 
 #main_content_wrap {
   background: #f2f2f2;
-  border-top: 1px solid #111;
+  border-top: 1px solid #888;
   border-bottom: 1px solid #111;
 }
 
