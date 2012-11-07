@@ -152,6 +152,7 @@ body > .navbar {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	cursor: pointer;
+	display: block;
 }
 
 input[type="radio"],
