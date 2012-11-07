@@ -390,11 +390,6 @@ input[type="checkbox"] {
           border-radius: 3px;
 }
 
-.btn-small [class^="icon-"],
-.btn-small [class*=" icon-"] {
-  margin-top: 0;
-}
-
 .btn-mini {
   padding: 1px 6px;
   font-size: 10.5px;
@@ -461,4 +456,8 @@ input[type="checkbox"] {
 	cursor: pointer;
 	display: block;
 	margin-bottom: 5px;
+}
+
+.download-btn {
+	padding: 20px 0;
 }
