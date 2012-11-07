@@ -59,32 +59,34 @@ window.on("destroy", function(){
 });
 ```
 ###create utils
-        /**
-        * @param {String} toArray
-        * @param {Function}
-        * @param {Boolean} true : mix util to core as a static method
-        */
-        $.util("toArray", function(theObject){
-            return $.array(theObject);
-        }, true);
+```javascript
+/**
+* @param {String} toArray
+* @param {Function}
+* @param {Boolean} true : mix util to core as a static method
+*/
+$.util("toArray", function(theObject){
+    return $.array(theObject);
+}, true);
 
-        //使用
-        function myMethod(){
-            console.log($.toArray(arguments);
-        }
+//使用
+function myMethod(){
+    console.log($.toArray(arguments);
+}
 
-        myMethod(1,2,3);  // [1,2,3]
-
+myMethod(1,2,3);  // [1,2,3]
+```
 
 
 ###create helper
-        $.helper("isString", function(theObject){
-            return $.is("string", theObject);
-        })
+```javascript
+$.helper("isString", function(theObject){
+    return $.is("string", theObject);
+})
 
-        //使用
-        console.log(isString(123));  // false
-
+//使用
+console.log(isString(123));  // false
+```
 
 
 
