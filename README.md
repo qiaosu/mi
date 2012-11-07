@@ -58,6 +58,7 @@ var Dialog = $.ui("Dialog", {
         }
         this.unbind();
         this.dom.parentNode.removeChild(this.dom);
+        this.trigger("destroy");
     },
     initialize : function(dom){
         this.dom = dom;
