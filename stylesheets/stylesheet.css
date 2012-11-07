@@ -194,7 +194,7 @@ ul, ol, dl {
 }
 
 ul li {
-  list-style: inside;
+  list-style: none;
   padding-left: 20px;
 }
 
