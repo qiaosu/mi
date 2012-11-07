@@ -6,7 +6,7 @@ define(function(require){
      * @param {Number} days the days between start date and end date
      * @return {Number} -1, 0, 1
      */
-    return require("core").util("isOutOfDate", function(dateStart, dateEnd, days){
+    return require("mi").util("isOutOfDate", function(dateStart, dateEnd, days){
         var dateStart = dateStart, dateEnd = dateEnd, days = days || 2;
         dateStart = dateStart.replace(/[-\.]/g, '/');
         dateEnd = dateEnd.replace(/[-\.]/g, '/');

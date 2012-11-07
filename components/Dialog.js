@@ -1,5 +1,5 @@
 define(function(require){
-    return require("core").ui("Dialog", {
+    return require("mi").ui("Dialog", {
         dom : null,
         type : "Dialog",
         addChild : function(child){

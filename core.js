@@ -1,12 +1,12 @@
-(function(core){
+(function(mi){
     if (typeof define === "function") {
-        define(function(){return core;}); // for seajs
+        define(function(){return mi;}); // for seajs
     } else {
-        this.MICore = this.MICore || core; // for <script>
+        this.mi = this.mi || mi; // for <script>
     }
 }((function(){
 
-    var _core, _instances_array = [];
+    var _mi, _instances_array = [];
 
     var _info = {
         version : '0.0.1'
@@ -431,7 +431,7 @@
     * @return {Boolean}
     */
     function _check(dir, thePackageObject){
-        return _each(thePackageObject || _core, function(value, key){
+        return _each(thePackageObject || _mi, function(value, key){
             if(dir === key){
                 return false;
             }
@@ -445,7 +445,7 @@
     function _get_class(){
         var instance = null;
         return (function(){
-            return instance ? instance : (instance = new (_core()));
+            return instance ? instance : (instance = new (_mi()));
         }())
     }
 
@@ -459,7 +459,7 @@
      */
     function _com(thePackage, theComName, theComData, mixToCore){
         if(arguments.length > 2){
-            if(_list(_core[thePackage]).indexOf(theComName)){
+            if(_list(_mi[thePackage]).indexOf(theComName)){
                throw new Error(thePackage + '.' + theComName + "\u540D\u79F0\u5DF2\u88AB\u5360\u7528\uFF01");
             }
 
@@ -467,14 +467,14 @@
                 throw new TypeError("util\u53C2\u6570\u7C7B\u578B\u9519\u8BEF\uFF0C\u7B2C\u4E8C\u4E2A\u53C2\u6570\u4E3AFunction\u7C7B\u578B");
             }
 
-            _core[thePackage][theComName] = theComData;
+            _mi[thePackage][theComName] = theComData;
 
             if(mixToCore === true){
-                _ns(theComName, _core, _core[thePackage][theComName]);
+                _ns(theComName, _mi, _mi[thePackage][theComName]);
             }
 
         }
-        return _core[thePackage][theComName];
+        return _mi[thePackage][theComName];
     }
 
     /**
@@ -508,8 +508,16 @@
         } else if(args == 1){
             return _com("components", componentName);
         } else {
-            return _com("components", componentName, _core(theComponentData), false);
+            return _com("components", componentName, _mi(theComponentData), false);
         }
+
+    }
+
+    function _helper(){
+
+    }
+
+    function _library(){
 
     }
 
@@ -589,7 +597,7 @@
 
 
     /** the core implements, base on kclass, view on https://github.com/ded/klass */
-    _core = (function () {
+    _mi = (function () {
         var f = 'function'
             , fnTest = /xyz/.test(function () {xyz}) ? /\bsupr\b/ : /.*/
             , proto = 'prototype';
@@ -698,28 +706,30 @@
     var _namespace = {
         ui:_ui,
         util : _util,
+        helper : _helper,
+        library : _library,
         utils : _utils,
         events : _events,
         components : _components
     };
 
     /** mix info to core */
-    _mix(_core, _info);
+    _mix(_mi, _info);
 
     /** mix utils to core */
-    _mix(_core, _utils);
+    _mix(_mi, _utils);
 
     /** mix events to core */
-    _mix(_core, _events);
+    _mix(_mi, _events);
 
     /** mix instances to core */
-    _mix(_core, _instances);
+    _mix(_mi, _instances);
     
     /** create namespaces */
     _each(_namespace, function(value, dir){
-        _ns(dir, _core, value);
+        _ns(dir, _mi, value);
     });
 
-    return _core;
+    return _mi;
 
 }())));

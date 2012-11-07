@@ -1,3 +1,3 @@
 define(function(require){
-    return require("core").library("jQuery", require("jQuery"));
+    return require("mi").library("jQuery", require("jQuery"));
 })

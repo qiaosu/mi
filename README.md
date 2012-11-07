@@ -4,18 +4,27 @@
 
 ##namespace
 ```javascript
-core.utils
-core.components
-core.library
-core.helper
-core.events
+mi.utils
+mi.components
+mi.library
+mi.helper
+mi.events
 ```
+
+##static method
+```javascript
+mi.util
+mi.ui
+mi.helper
+mi.library
+```
+
 
 ##example
 
 ### create components
 ```javascript
-var $ = require("core");
+var $ = require("mi");
 
 var Dialog = $.ui("Dialog", {
     dom : null,
