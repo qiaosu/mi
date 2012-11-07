@@ -43,6 +43,9 @@ var Dialog = $.ui("Dialog", {
     appendTo : function(theTarget){
         theTarget.appendChild(this.dom);
     },
+    dialogClickHandler : function(){
+        // code here
+    },
     bind : function(){
         E.on(this.dom, 'click', this.dialogClickHandler);
     },
