@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 		$.ajax({
 	    	type: 'POST',
-	      	url: /*/\?dev/.test(window.location) ? */'http://10.5.17.108:4567', /*: 'http://bootstrap.herokuapp.com'*/
+	      	url: /*/\?dev/.test(window.location) ? 'http://10.5.17.108:4567', :*/ 'http://mitoolkit.herokuapp.com'*/
 	      	dataType: 'jsonpi',
 	        params: {
 	          	source: source.toString(),
