@@ -40,7 +40,7 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
-	$('#J_cmd_download').on('click', function(){
+	$('#J_cmd_download').on('click', function(e){
 		e.preventDefault();
 		alert('not published. :-)');
 	});
