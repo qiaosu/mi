@@ -22,7 +22,7 @@ $(document).ready(function() {
 	      	url: /*/\?dev/.test(window.location) ? */'http://localhost:4567', /*: 'http://bootstrap.herokuapp.com'*/
 	      	dataType: 'jsonpi',
 	        params: {
-	          	source: source.toString,
+	          	source: source.toString(),
 	          	namespace: ns
 	        }
 	      })
