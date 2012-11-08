@@ -4,6 +4,8 @@ $(document).ready(function() {
 			var len = $('.cmdonly input:checked').length;
 			if (len != 0){
 				$('#J_ns_download').attr('disabled', 'disabled');
+			} else {
+				$('#J_ns_download').removeAttr('disabled');
 			}
 		});
 	})
