@@ -491,6 +491,10 @@ input[type="file"], input[type="image"], input[type="submit"], input[type="reset
   font-size: 12px;
 }
 
+.form-item .error {
+  color: red;
+}
+
 #main_content h3 {
   margin: 20px 0 0;
 }
