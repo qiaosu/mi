@@ -15,9 +15,6 @@ $(document).ready(function() {
 	      	dataType: 'jsonpi',
 	        params: {
 	          	tag: tag
-	        },
-	        success: function(data, state, xhr){
-	        	console.log(xhr);
 	        }
 	      })
 		e.preventDefault();
@@ -49,12 +46,6 @@ $(document).ready(function() {
 	          		.attr('value', typeof v == 'string' ? v : JSON.stringify(v))
 	          		.appendTo(form)
 	      		})
-
-	      		$('<input>')
-	          		.attr('type', 'hidden')
-	          		.attr('name', 'callback')
-	          		.attr('value', name)
-	          		.appendTo(form)
 
 	      		form.appendTo('body').submit()
 	    	}
