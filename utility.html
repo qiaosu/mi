@@ -21,13 +21,13 @@
           <li class="">
             <a href="./index.html">Home</a>
           </li>
-          <li class="active">
+          <li class="">
             <a href="./getting-started.html">Get started</a>
           </li>
           <li class="">
             <a href="./customize.html">Customize</a>
           </li>
-          <li class="">
+          <li class="active">
             <a href="./utility.html">Utility</a>
           </li>
         </ul>
@@ -47,7 +47,17 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        ...
+        <h3>Search tag</h3>
+        <p>Only support one tag now.</p>
+        <hr/>
+        <div class="form-group">
+          <div class="form-item">
+            <input name="tag" class="input-large" type="text" maxlength="40" />
+            <a id="J_utility_search" class="btn btn-primary" href="#">Search</a>
+            <div class="item-explain">Suggestion: like "color", "template"...</div>
+          </div>
+        </div>
+
       </section>
     </div>
 
@@ -57,8 +67,8 @@
         <p class="copyright">mi-toolkit maintained by <a href="https://github.com/qiaosu">qiaosu</a></p>
       </footer>
     </div>
-
-    
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/utilsearch.js"></script> 
 
   </body>
 </html>
