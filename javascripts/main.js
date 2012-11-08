@@ -1,7 +1,12 @@
 $(document).ready(function() {
-	$('.cmdonly input').on('click', function(e){
-		$('#J_ns_download').attr('disabled', 'disabled');
-	});
+	$('.cmdonly input').each(function(i, item){
+		$(item).on('click', function(e){
+			var len = $('.cmdonly input:checked').length;
+			if (len != 0){
+				$('#J_ns_download').attr('disabled', 'disabled');
+			}
+		});
+	})
 
 	$('#J_ns_download').on('click', function(e){
 		//check submit data
@@ -34,8 +39,8 @@ $(document).ready(function() {
 	});
 
 	$('#J_cmd_download').on('click', function(){
-		alert('not published. :-)');
 		e.preventDefault();
+		alert('not published. :-)');
 	});
 
 	// Modified from the original jsonpi https://github.com/benvinegar/jquery-jsonpi
