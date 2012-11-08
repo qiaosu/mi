@@ -50,6 +50,12 @@ $(document).ready(function() {
 	          		.appendTo(form)
 	      		})
 
+	      		$('<input>')
+	          		.attr('type', 'hidden')
+	          		.attr('name', 'callback')
+	          		.attr('value', name)
+	          		.appendTo(form)
+
 	      		form.appendTo('body').submit()
 	    	}
 	  	}
