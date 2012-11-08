@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	$('.cmdonly input').on('click', function(e){
+		$('#J_ns_download').attr('disabled', 'disabled');
+	});
+
 	$('#J_ns_download').on('click', function(e){
 		//check submit data
 		var ns, source=[];
@@ -26,6 +30,11 @@ $(document).ready(function() {
 	          	namespace: ns
 	        }
 	      })
+		e.preventDefault();
+	});
+
+	$('#J_cmd_download').on('click', function(){
+		alert('not published. :-)');
 		e.preventDefault();
 	});
 
