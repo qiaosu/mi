@@ -13,7 +13,6 @@ $(document).ready(function() {
 		}
 
 		source.push($('input[name="class"]:checked').val());
-		source.push($('input[name="template"]:checked').val());
 		$('input[type="checkbox"]:checked').each(function(i,item){
 			source.push(item.value);
 		});
