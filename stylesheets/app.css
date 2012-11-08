@@ -448,6 +448,10 @@ input[type="file"], input[type="image"], input[type="submit"], input[type="reset
   background-color: #003399 \9;
 }
 
+.btn-inline {
+  margin-bottom: 10px;
+}
+
 .download .checkbox, .download .radio {
 	padding: 6px 10px 6px 25px;
 	font-size: 13px;
@@ -512,4 +516,9 @@ input[type="file"], input[type="image"], input[type="submit"], input[type="reset
 #main_content strong.color {
   font-weight: normal;
   color: #5FA7C8;
+}
+
+#data_content {
+  min-height: 300px;
+  _height: 300px;
 }
