@@ -16,7 +16,7 @@ $(document).ready(function() {
 	        params: {
 	          	tag: tag
 	        },
-	        success: function(xhr){
+	        success: function(data, state, xhr){
 	        	console.log(xhr);
 	        }
 	      })
@@ -49,6 +49,12 @@ $(document).ready(function() {
 	          		.attr('value', typeof v == 'string' ? v : JSON.stringify(v))
 	          		.appendTo(form)
 	      		})
+
+	      		$('<input>')
+	          		.attr('type', 'hidden')
+	          		.attr('name', 'callback')
+	          		.attr('value', name)
+	          		.appendTo(form)
 
 	      		form.appendTo('body').submit()
 	    	}
