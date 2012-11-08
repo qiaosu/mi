@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('#J_ns_download').on('click', function(e){
 		//check submit data
-		var ns, source;
+		var ns, source=[];
 		ns = $('input[name="namespace"]').val().trim();
 		if (ns === '') {
 			view.showError('namespace is required.');
@@ -12,12 +12,18 @@ $(document).ready(function() {
 			return false;
 		}
 
+		source.push($('input[name="class"]:checked').val());
+		source.push($('input[name="template"]:checked').val());
+		$('input[type="checkbox"]:checked').each(function(i,item){
+			source.push(item.value);
+		});
+
 		$.ajax({
 	    	type: 'POST',
 	      	url: /*/\?dev/.test(window.location) ? */'http://localhost:4567', /*: 'http://bootstrap.herokuapp.com'*/
 	      	dataType: 'jsonpi',
 	        params: {
-	          	source: 'klass',
+	          	source: source.toString,
 	          	namespace: ns
 	        }
 	      })
