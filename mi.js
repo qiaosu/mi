@@ -38,12 +38,19 @@
         getClass : _get_class
     };
 
+    /** helpers */
+    var _helpers = {};
+
+    /** libraries */
+
+    var _libraries = {};
+
     /** the event object */
     var _events = {};
 
     /** the component object */
     var _components = {};
-    
+
     /**
     * the namespace parser
     * @param {Array} arr the namespace array
@@ -77,7 +84,7 @@
         return typeof(path) == "string" ? _parser(path.split("."), function (a,b,i,arr){
             if(!_check(b,a)){throw new Error("\u8BE5\u540D\u79F0 "+b+" \u5DF2\u88AB\u5360\u7528\uFF0C\u8BF7\u9009\u62E9\u5176\u5B83\u540D\u79F0\uFF01");}
             return a[b] = a[b] ? a[b] : (arr.length - 1 === i && hasValue ? value : {});
-        }, root || window) : path;
+        }, root || _mi) : path;
     }
 
     /**
@@ -513,12 +520,58 @@
 
     }
 
-    function _helper(){
+    /**
+     * create helper
+     * @param {String} theName
+     * @param {Object} [theValue]
+     * @return {Object}
+     */
+    function _helper(theName, theValue){
+        if(arguments.length == 0){
+            throw new Error("");
+        } else if(arguments.length == 1){
+            return _helpers[theName] ? _helpers[theName] : null;
+        }
 
+        if(window[theName]){
+            throw new Error("");
+        }
+
+        window[theName] = theValue;
+
+        /** store the helper */
+        _helpers[theName] = theValue;
+
+        return window[theName];
     }
 
-    function _library(){
+    /**
+     * use a library to do something
+     * @param {String} theName the library name
+     * @param {Function|Object} [theValue] the library value
+     * @param {Object} theParams the parameters
+     * @return {Object}
+     */
+    function _library(theName, theValue, theParams){
+        if(arguments.length == 0){
+            throw new Error("");
+        } else if(arguments.length == 1){
+            return _libraries[theName] ? _libraries[theName] : null;
+        }
+        if(_libraries[theName]){
+            throw new Error("")
+        }
+        if(_is("object", theValue)){
+            theValue = _mi(theValue);
+        } else if(_is("function", theValue)){
+            theValue = theValue;
+        } else {
+            throw new Error("");
+        }
 
+        _libraries[theName] = new theValue(theParams);
+
+        return _libraries[theName];
     }
 
     /** the events object */
@@ -724,7 +777,7 @@
 
     /** mix instances to core */
     _mix(_mi, _instances);
-    
+
     /** create namespaces */
     _each(_namespace, function(value, dir){
         _ns(dir, _mi, value);
