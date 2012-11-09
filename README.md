@@ -131,3 +131,25 @@ $.helper("isString", function(theObject){
 //使用
 console.log(isString(123));  // false
 ```
+
+
+###create library
+```javascript
+$.library("Email", {
+    msg : 'send email',
+    from: function(from){
+        this.msg += ' from ' + from;
+        return this;
+    },
+    to: function(to){
+        this.msg += ' to ' + to;
+        return this;
+    },
+    echo: function(){
+        console.log(this.msg);
+    }
+})
+
+//使用
+$.library("Email").from('zhangsan').to('lisi').echo();
+```
