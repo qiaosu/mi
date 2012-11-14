@@ -1,0 +1,22 @@
+{
+    "name": "gome",
+    "version": "1.0.0",
+    "parent": "../package.json",
+    "description": "",
+    "homepage": "",
+    "author": "",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": {
+        "url": ""
+    },
+    "license": "",
+    "dependencies": {
+    },
+    "tests": ["gome"],
+    "output": {
+        "gome.js": "."
+    }
+}
