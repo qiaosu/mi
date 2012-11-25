@@ -1,0 +1,22 @@
+{
+    "name": "app",
+    "version": "1.0.0",
+    "root": "#",
+    "description": "",
+    "homepage": "",
+    "author": "vincent",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": {
+        "url": ""
+    },
+    "license": "",
+    "dependencies": {
+    },
+    "tests": ["app"],
+    "output": {
+        "app.js": "."
+    }
+}

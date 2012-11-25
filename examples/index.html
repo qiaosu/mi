@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>app test</title>
+</head>
+<body>
+    <script src="http://seajs.org/dist/sea.js?v20121113.js"></script>
+    <script>
+        seajs.config({
+            alias:{
+                'app': '../src/app'
+            },
+            debug: 2,
+            base: "./"
+        });
+
+        seajs.use("app", function(app){
+            app();
+        });
+
+    </script>
+</body>
+</html>
