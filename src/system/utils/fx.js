@@ -18,7 +18,7 @@ define(function(require){
         context = context || opts;
         
         if (opts.init && false === opts.init.call(context)){
-            return;
+            return 0;
         }
         
         function v(f, t){
