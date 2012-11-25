@@ -5,22 +5,22 @@ define(function(require, exports){
 
     mi.log.info("system.utils.setup initialize...");
 
-    /** include util fx */
+    /** include util type */
     require("./type");
 
-    /** include util isClass */
-    require("./isClass");
+    /** include util is_class */
+    require("./is_class");
 
-    /** include util map */
+    /** include util copy */
     require("./copy");
 
-    /** include util delay */
+    /** include util is */
     require("./is");
 
-    /** include util indexOf */
+    /** include util date */
     require("./date");
 
-    /** include util method */
+    /** include util mix */
     require("./mix");
 
     /** include util rmb */
@@ -29,41 +29,45 @@ define(function(require, exports){
     /** include util trim */
     require("./trim");
 
-    /** include util before */
+    /** include util fx */
     require("./fx");
 
-    /** include util each */
+    /** include util delay */
     require("./delay");
 
-    /** include util is */
+    /** include util array */
     require("./array");
 
-    /** include util type */
+    /** include util aop */
     require("./aop");
 
-    /** include util aop */
+    /** include util method */
     require("./method");
 
     /** include util after */
     require("./after");
 
-    /** include util array */
+    /** include util before */
     require("./before");
 
-    /** include util filter */
+    /** include util each */
     require("./each");
 
-    /** include util list */
+    /** include util map */
     require("./map");
 
-    /** include util mix */
+    /** include util filter */
     require("./filter");
 
-    /** include util copy */
-    require("./indexOf");
+    /** include util index_of */
+    require("./index_of");
 
-    /** include util isClass */
+    /** include util list */
     require("./list");
+
+    /** include util dataToTree */
+    require("./data_to_tree");
+
 
     mi.dispatcher.trigger(SystemCoreEvent.UTIL_SET_FINISHED);
 })
