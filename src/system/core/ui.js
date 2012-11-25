@@ -19,7 +19,7 @@ define(function(require){
             } else if(args == 1){
                 return _uis[theUIName];
             } else {
-                _uis[theUIName] = _(theUIValue);
+                _uis[theUIName] = mi(theUIValue);
 
                 mi.log.info("uis."+theUIName + " added successful!");
 

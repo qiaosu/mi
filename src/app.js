@@ -22,8 +22,27 @@ define(function(require, exports, module) {
     require("./application/setup");
 
 
+    var Circle = require("./application/ui/circle");
+
     var app = function(){
-            mi.log.info('hello app!');
+        
+        var red = new Circle("circle");
+        red.move();
+
+        var blue = new Circle("circle_blue");
+        blue.time = 1000;
+        blue.pos = [[0, 0], [300, 0], [300, 300], [0, 300]];
+        mi.delay(function(){
+            blue.move();
+        }, 1000)();
+
+        var green = new Circle("circle_green");
+        green.time = 800;
+        green.pos = [[0, 0], [400, 0], [400, 400], [0, 400]];
+        mi.delay(function(){
+            green.move();
+        }, 1500)();
+
     };
 
     module.exports = app;

@@ -3,8 +3,33 @@
 <head>
 <meta charset="utf-8">
 <title>app test</title>
+<style type="text/css">
+    html, body {
+        padding: 0;
+        margin: 0;
+    }
+    .circle {
+        background-color: red;
+        width:50px;
+        height:50px;
+        border-radius: 50px 50px 50px 50px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .circle-blue {
+        background-color: blue;
+    }
+    .circle-green {
+        background-color: green;
+    }
+</style>
 </head>
 <body>
+
+    <div id="circle" class="circle" style="left:350px;top:50px;"></div>
+    <div id="circle_blue" class="circle circle-blue" style="left:300px;top:50px;"></div>
+    <div id="circle_green" class="circle circle-green" style="left:250px;top:50px;"></div>
     <script src="http://seajs.org/dist/sea.js?v20121113.js"></script>
     <script>
         seajs.config({

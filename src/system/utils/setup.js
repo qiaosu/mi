@@ -11,8 +11,29 @@ define(function(require, exports){
     /** include util after */
     require("./after");
 
+    /** include util type */
+    require("./type");
+
+    /** include util is */
+    require("./is");
+
     /** include util array */
     require("./array");
+
+    /** include util map */
+    require("./map");
+
+    /** include util indexOf */
+    require("./indexOf");
+
+    /** include util each */
+    require("./each");
+
+    /** include util filter */
+    require("./filter");
+
+    /** include util mix */
+    require("./mix");
 
     /** include util before */
     require("./before");
@@ -23,26 +44,11 @@ define(function(require, exports){
     /** include util delay */
     require("./delay");
 
-    /** include util each */
-    require("./each");
-
-    /** include util filter */
-    require("./filter");
-
-    /** include util indexOf */
-    require("./indexOf");
-
-    /** include util is */
-    require("./is");
-
     /** include util isClass */
     require("./isClass");
 
     /** include util list */
     require("./list");
-
-    /** include util map */
-    require("./map");
 
     /** include util aop */
     require("./aop");
@@ -50,17 +56,11 @@ define(function(require, exports){
     /** include util method */
     require("./method");
 
-    /** include util mix */
-    require("./mix");
-
     /** include util rmb */
     require("./rmb");
 
     /** include util trim */
     require("./trim");
-
-    /** include util type */
-    require("./type");
 
     /** include util date */
     require("./date");

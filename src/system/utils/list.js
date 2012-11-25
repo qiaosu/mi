@@ -38,8 +38,8 @@ define(function(require){
                 return this;
             },
             map : function(callback, context){
-                _map(this.object, callback, context || this);
-                return this;
+                return _map(this.object, callback, context || this);
+
             },
             filter : function(callback, context){
                 return _filter(this.object, callback, context || this);
