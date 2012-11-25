@@ -139,11 +139,11 @@ $.library("Email", {
         this.msg += ' to ' + to;
         return this;
     },
-    echo: function(){
+    send: function(){
         console.log(this.msg);
     }
 })
 
 //use
-$.library("Email").from('zhangsan').to('lisi').echo();
+$.library("Email").from('zhangsan').to('lisi').send();
 ```
