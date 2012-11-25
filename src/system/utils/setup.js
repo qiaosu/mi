@@ -65,5 +65,8 @@ define(function(require, exports){
     /** include util date */
     require("./date");
 
+    /** include util fx */
+    require("./fx");
+
     mi.dispatcher.trigger(SystemCoreEvent.UTIL_SET_FINISHED);
 })
