@@ -150,6 +150,6 @@ $.library("Email", {
     }
 })
 
-//使用
+//use
 $.library("Email").from('zhangsan').to('lisi').echo();
 ```
