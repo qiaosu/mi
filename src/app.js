@@ -29,7 +29,7 @@ define(function(require, exports, module) {
         var divs = document.getElementById("circle").getElementsByTagName("div");
 
         mi.each(divs, function(div, index){
-            new Circle(div).init(index * 30).move();
+            new Circle(div).init(index * 500).move();
         });
 
     };
