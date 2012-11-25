@@ -2,9 +2,11 @@
     a smaller and lighter javascript library, you can combine each module if you like to create yourself libraries.
 
 ##constant
+```javascript
 mi.events
 mi.instances
 mi.dispatcher
+```
 
 ##static methods
 ```javascript
