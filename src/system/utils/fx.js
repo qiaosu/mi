@@ -23,12 +23,13 @@ define(function(require){
         
         function v(f, t){
             return +f + (t - f) * fx(z)
-        };
+        }
 
         return thread = setInterval(function(){
             z = Math.min(1, (new D - d) / time);
-            if (false === callback.call(context, v, z) || z == 1) 
+            if (false === callback.call(context, v, z) || z == 1){
                 end.call(context, opts, clearInterval(thread));
+            }
         }, 10);
 
     }, true);
