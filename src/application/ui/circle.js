@@ -14,7 +14,7 @@ define(function(require){
 
         offsets: {x:0, y: 0},
         
-        pos: [[0, 0], [200, 0], [200, 200], [0, 200]],
+        path: [[0, 0], [300, 0], [300, 300], [0, 300]],
 
         x: function(x){
             if(arguments.length >= 1){
@@ -50,26 +50,38 @@ define(function(require){
                 },
                 
                 end : function(){
-                    
-                    var thePoint = this.pos[(++this.cursor) % this.pos.length];
 
-                    this.moveTo(thePoint);
-                
+                        var thePoint = this.path[(++this.cursor) % this.path.length];
+
+                        this.moveTo(thePoint);
                 }
 
             }, this);
         },
 
-        move: function(){
-            
-            this.dom = document.getElementById(this.id);
+        add: function(point){
+            this.path.push(point);
+            return this;
+        },
+
+        move : function(delay){
+            var _this = this;
+            mi.delay(function(){
+                _this.moveTo(_this.path[_this.cursor]);
+            }, this.delay)();
+
+        },
+
+        init: function(delay){
+
+            this.delay = delay || 100;
 
             this.offsets = {
                 x: this.x(),
                 y: this.y()
             };
 
-            this.moveTo(this.pos[this.cursor]);
+            return this;
         }
     });
 })

@@ -25,23 +25,12 @@ define(function(require, exports, module) {
     var Circle = require("./application/ui/circle");
 
     var app = function(){
-        
-        var red = new Circle("circle");
-        red.move();
 
-        var blue = new Circle("circle_blue");
-        blue.time = 1000;
-        blue.pos = [[0, 0], [300, 0], [300, 300], [0, 300]];
-        mi.delay(function(){
-            blue.move();
-        }, 1000)();
+        var divs = document.getElementById("circle").getElementsByTagName("div");
 
-        var green = new Circle("circle_green");
-        green.time = 800;
-        green.pos = [[0, 0], [400, 0], [400, 400], [0, 400]];
-        mi.delay(function(){
-            green.move();
-        }, 1500)();
+        mi.each(divs, function(div, index){
+            new Circle(div).init(index * 30).move();
+        });
 
     };
 
