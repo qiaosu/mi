@@ -64,7 +64,7 @@
     * @param {Object} [root] the namespace root object
     * @return {Object} the last object of namespace
     */
-    function _parser(arr, callback, root){
+    function _parse(arr, callback, root){
         var array = arr || [], len = array.length, i = 0, last = root;
         if (len == 0 && arguments.length == 2) {
             throw new TypeError()
@@ -91,7 +91,7 @@
         if(args == 1){ isGet = true; }
         if(args >= 2){ isDefine = true; }
 
-        return _type(path) == "string" ? _parser(path.split("."), function (theObject,key,i,arr){
+        return _type(path) == "string" ? _parse(path.split("."), function (theObject,key,i,arr){
             if(isGet){
                 if(!theObject[key]){
                     throw new Error(key + ' undefined!');
