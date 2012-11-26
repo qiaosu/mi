@@ -1,17 +1,17 @@
 define(function(require){
-    var mi = require("../core/mi");
+    var _ = require("../core/mi");
     /**
      * date util
      * @name date
      * @param {Date|String} dateString
      * @return {Function}
      */
-    mi.util("date", function(date){
+    _.util("date", function(date){
         var dateParser = {
             date: null,
             dateFormat: 'yyyy.MM.dd',
             parse : function(date){
-                if(mi.is("date", date)){
+                if(_.is("date", date)){
                     this.date = date;
                 } else {
                     var date = date.replace(/[-\.]/g, "/");
@@ -72,7 +72,7 @@ define(function(require){
                     "q+": Math.floor((this.date.getMonth() + 3) / 3)
                 };
 
-                var w = "ÈÕÒ»¶þÈýËÄÎåÁù".split("");
+                var w = "æ—¥ä¸€äºŒä¸‰å››äº”å…­".split("");
 
                 var dateString = "";
 
@@ -81,7 +81,7 @@ define(function(require){
                 }
                 if(/(E+)/.test(dateString)){
                     var charLength = RegExp.$1.length;
-                    dateString = dateString.replace(RegExp.$1, ((charLength > 1) ? (charLength > 2 ? "ÐÇÆÚ" : "ÖÜ") : "") + w[this.date.getDay()]);
+                    dateString = dateString.replace(RegExp.$1, ((charLength > 1) ? (charLength > 2 ? "æ˜ŸæœŸ" : "å‘¨") : "") + w[this.date.getDay()]);
                 }
                 for(var k in o){
                     if(new RegExp("("+k+")").test(dateString)){
