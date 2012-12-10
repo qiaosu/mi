@@ -18,14 +18,14 @@ define(function(require){
             var args = arguments.length;
             if(args == 1){
                 return _models[theModelName];
-            }
-            if(args == 2){
+            } else {
                 _models[theModelName] = typeof(theModelValue) == "function" ? new theModelValue : theModelValue;
 
                 mi.log.info("models."+theModelName + " added successful!");
 
                 return _models[theModelName];
             }
+            throw new Error('');
         }
     }()))
 

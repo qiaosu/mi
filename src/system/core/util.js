@@ -15,9 +15,7 @@ define(function(require){
         var _utils = {};
         return function(theUtilName, theUtilValue, mixed){
             var args = arguments.length;
-            if(args.length == 0){
-                throw new Error("parameter error!");
-            } else if(args == 1){
+            if(args == 1){
                 return _utils[theUtilName];
             } else {
                 _utils[theUtilName] = theUtilValue;
@@ -28,6 +26,7 @@ define(function(require){
 
                 mi.log.info("utils."+theUtilName + " added"  + (mixed? " and mixed to mi" : "") + " successful!");
             }
+            throw new Error("parameter error!");
         }
     }()))
 

@@ -14,9 +14,10 @@ define(function(require){
         var _uis = {};
         return function(theUIName, theUIValue){
             var args = arguments.length;
-            if(args.length == 0){
+            if(args == 0){
                 throw new Error("");
-            } else if(args == 1){
+            }
+            if(args == 1){
                 return _uis[theUIName];
             } else {
                 _uis[theUIName] = mi(theUIValue);
