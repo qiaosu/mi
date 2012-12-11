@@ -4,14 +4,15 @@
 ##base constant
 
 ```javascript
+
 //base event
 mi.events
 
 //all mi instances
 mi.instances
 
-//single mi instance
-mi.dispatcher	
+//single mi instance, use for global event dispatcher
+mi.dispatcher
 
 ```
 
@@ -73,79 +74,79 @@ mi.library
 ### create Dialog components
 ```javascript
 
-	var mi = require("mi");
+var mi = require("mi");
 
-	//create a dialog
+//create a dialog
 
-	// mi.ui("Dialog", {});
+// mi.ui("Dialog", {});
 
-	//create a dialog component
+//create a dialog component
 
-	var Dialog = mi.ui("Dialog", {
+var Dialog = mi.ui("Dialog", {
 
-    	dom : null,
-    
-    	type : "Dialog",
-    	addChild : function(child){
-        	this.dom.addChild(child);
-    	},
-    	removeChild : function(child){
-        	this.dom.removeChild(child);
-    	},
-    	appendTo : function(theTarget){
-        	theTarget.appendChild(this.dom);
-    	},
-    	dialogClickHandler : function(){
-        	// code here
-    	},
-    	bind : function(){
-        	E.on(this.dom, 'click', this.dialogClickHandler);
-    	},
-    	unbind : function(){
-        	E.off(this.dom, 'click', this.dialogClickHandler);
-    	},
-    	destroy : function(){
-        	while(this.dom.firstChild){
-            	this.removeChild(this.firstChild);
-        	}
-        	this.unbind();
-        	this.dom.parentNode.removeChild(this.dom);
-        	this.trigger("destroy");
-    	},
-    	initialize : function(dom){
-        	this.dom = dom;
-        	this.bind();
+	dom : null,
+
+	type : "Dialog",
+	addChild : function(child){
+    	this.dom.addChild(child);
+	},
+	removeChild : function(child){
+    	this.dom.removeChild(child);
+	},
+	appendTo : function(theTarget){
+    	theTarget.appendChild(this.dom);
+	},
+	dialogClickHandler : function(){
+    	// code here
+	},
+	bind : function(){
+    	E.on(this.dom, 'click', this.dialogClickHandler);
+	},
+	unbind : function(){
+    	E.off(this.dom, 'click', this.dialogClickHandler);
+	},
+	destroy : function(){
+    	while(this.dom.firstChild){
+        	this.removeChild(this.firstChild);
     	}
+    	this.unbind();
+    	this.dom.parentNode.removeChild(this.dom);
+    	this.trigger("destroy");
+	},
+	initialize : function(dom){
+    	this.dom = dom;
+    	this.bind();
+	}
+});
+
+// create dialog instance
+var dialog = new Dialog(document.createElement("div"));
+
+//you can get dialog class like this
+//var dialog = new (mi.ui("Dialog"))(document.createElement("div"));
+
+var title = document.createElement("h3");
+	title.innerHTML = "title";
+
+var body = document.createElement("div");
+	body.innerHTML = "body";
+
+	dialog.addChild(title);
+
+	dialog.addChild(body);
+
+	dialog.appendTo(document.body);
+
+	dialog.on("destroy", function(){
+    	console.log('dialog destroyed!');
+    	// clear all events
+    	this.off();
 	});
 
-	// create dialog instance
-	var dialog = new Dialog(document.createElement("div"));
-
-	//you can get dialog class like this
-	//var dialog = new (mi.ui("Dialog"))(document.createElement("div"));
-
-	var title = document.createElement("h3");
-    	title.innerHTML = "title";
-
-	var body = document.createElement("div");
-    	body.innerHTML = "body";
-
-    	dialog.addChild(title);
-
-    	dialog.addChild(body);
-
-    	dialog.appendTo(document.body);
-
-    	dialog.on("destroy", function(){
-        	console.log('dialog destroyed!');
-        	// clear all events
-        	this.off();
-    	});
-
-    	//1s later execute dialog.destroy
-    	$.delay(function(){
-        	dialog.destroy();
-    	}, 1000);
+	//1s later execute dialog.destroy
+	$.delay(function(){
+    	dialog.destroy();
+	}, 1000);
 ```
 
 ###create utils
@@ -162,7 +163,7 @@ mi.util("toArray", function(theObject){
 
 // use
 function myMethod(){
-    console.log(mi.toArray(arguments);
+    mi.log(mi.toArray(arguments);
 }
 
 myMethod(1,2,3);  // [1,2,3]
@@ -176,7 +177,8 @@ mi.helper("isString", function(theObject){
 })
 
 //use
-console.log(isString(123));  // false
+mi.log(isString(123));  // false
+
 ```
 
 
@@ -199,4 +201,5 @@ $.library("Email", {
 
 //use
 $.library("Email").from('zhangsan').to('lisi').send();
+
 ```
