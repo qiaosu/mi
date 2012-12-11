@@ -85,6 +85,7 @@ mi.library
   + libraries
     - setup.js  // setup which librar(y|ies) to support
   - setup.js    // setup which property to support
+  - app.js      // app root
 + system
   + core
     - mi.js          // the core mi implementation
@@ -127,7 +128,6 @@ mi.library
   + helpers
     - setup.js         // setup which system helper(s) to support
   - setup.js           // setup which property to support
-- app.js               // app root
 ```
 
 ##example
