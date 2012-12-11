@@ -8,11 +8,11 @@ define(function(require, exports, module) {
      * include the core mi, must be include first
      * @type {Function}
      */
-    var mi = require("./system/core/mi");
+    var mi = require("../system/core/mi");
 
-    var SystemCoreEvent = require("./system/events/system_core_event");
+    var SystemCoreEvent = require("../system/events/system_core_event");
 
-    var ApplicationCoreEvent = require("./application/events/application_core_event");
+    var ApplicationCoreEvent = require("./events/application_core_event");
 
     /**
      * enable console log if console supported
@@ -31,10 +31,10 @@ define(function(require, exports, module) {
     /**
      * setup application core which method user want to support
      */
-    require("./application/setup");
+    require("./setup");
 
 
-    var Circle = require("./application/ui/circle");
+    var Circle = require("./ui/circle");
 
     var app = function(){
 

@@ -131,6 +131,9 @@ mi.library
 ```
 
 ##example
+```javascript
+    you can run example/index.html
+```
 
 ### create Dialog components
 ```javascript

@@ -1,6 +1,6 @@
 define(function(require) {
 
-    var {{Project}} = require('../src/app');
+    var {{Project}} = require('../src/application/app');
 
     describe('{{Project}}', function() {
 
