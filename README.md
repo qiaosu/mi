@@ -87,16 +87,16 @@ mi.library
   -setup.js    // setup which property to support
 + system
   + core
-    - ui.js          // ui implementations
-    - util.js        // util implementations
-    - helper.js      // helper implementations
-    - library.js     // library implementations
-    - controller.js  // controller implementations
-    - model.js       // model implementations
-    - collection.js  // collection implementations
-    - router.js      // router implementations
+    - ui.js          // ui implementation
+    - util.js        // util implementation
+    - helper.js      // helper implementation
+    - library.js     // library implementation
+    - controller.js  // controller implementation
+    - model.js       // model implementation
+    - collection.js  // collection implementation
+    - router.js      // router implementation
     - setup.js       // setup which implementation(s) to support
-    - mi.js          // the core mi implementations
+    - mi.js          // the core mi implementation
   + events
     - system_core_event.js  // system events
   + utils
