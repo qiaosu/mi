@@ -357,7 +357,6 @@
         set : _set,
         get : _get,
         log : _log,
-        package : _package,
         events : _events,
         instances : _instances_array,
         dispatcher : _dispatcher()

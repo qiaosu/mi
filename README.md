@@ -1,104 +1,155 @@
 #mi
     a smaller and lighter javascript library, you can combine each module if you like to create yourself libraries.
 
-##constant
+##base constant
+
 ```javascript
+//base event
 mi.events
+
+//all mi instances
 mi.instances
-mi.dispatcher
+
+//single mi instance
+mi.dispatcher	
+
 ```
 
-##static methods
+##base methods
+
 ```javascript
+
+//create package
 mi.set
+
+// get package
 mi.get
+
+//logger
 mi.log
-mi.package
-mi.util
-mi.ui
-mi.helper
-mi.library
+
+```
+
+##extension constant
+
+```javascript
+//base controller
+
 mi.controller
+
+//base model
+
 mi.model
+
+//base view
+
 mi.view
+
+//base router
+
 mi.router
+
+```
+
+##extension methods
+```javascript
+
+//register a util
+mi.util
+
+//regisger a display object
+mi.ui
+
+//register a helper on window
+mi.helper
+
+//register a library
+mi.library
+
 ```
 
 ##example
 
 ### create Dialog components
 ```javascript
-var mi = require("mi");
 
-//create a dialog
-// mi.ui("Dialog", {});
+	var mi = require("mi");
 
-//create a dialog component
-var Dialog = mi.ui("Dialog", {
-    dom : null,
-    type : "Dialog",
-    addChild : function(child){
-        this.dom.addChild(child);
-    },
-    removeChild : function(child){
-        this.dom.removeChild(child);
-    },
-    appendTo : function(theTarget){
-        theTarget.appendChild(this.dom);
-    },
-    dialogClickHandler : function(){
-        // code here
-    },
-    bind : function(){
-        E.on(this.dom, 'click', this.dialogClickHandler);
-    },
-    unbind : function(){
-        E.off(this.dom, 'click', this.dialogClickHandler);
-    },
-    destroy : function(){
-        while(this.dom.firstChild){
-            this.removeChild(this.firstChild);
-        }
-        this.unbind();
-        this.dom.parentNode.removeChild(this.dom);
-        this.trigger("destroy");
-    },
-    initialize : function(dom){
-        this.dom = dom;
-        this.bind();
-    }
-});
+	//create a dialog
 
-// create dialog instance
-var dialog = new Dialog(document.createElement("div"));
+	// mi.ui("Dialog", {});
 
-//you can get dialog class like this
-//var dialog = new (mi.ui("Dialog"))(document.createElement("div"));
+	//create a dialog component
 
-var title = document.createElement("h3");
-    title.innerHTML = "title";
+	var Dialog = mi.ui("Dialog", {
 
-var body = document.createElement("div");
-    body.innerHTML = "body";
+    	dom : null,
+    
+    	type : "Dialog",
+    	addChild : function(child){
+        	this.dom.addChild(child);
+    	},
+    	removeChild : function(child){
+        	this.dom.removeChild(child);
+    	},
+    	appendTo : function(theTarget){
+        	theTarget.appendChild(this.dom);
+    	},
+    	dialogClickHandler : function(){
+        	// code here
+    	},
+    	bind : function(){
+        	E.on(this.dom, 'click', this.dialogClickHandler);
+    	},
+    	unbind : function(){
+        	E.off(this.dom, 'click', this.dialogClickHandler);
+    	},
+    	destroy : function(){
+        	while(this.dom.firstChild){
+            	this.removeChild(this.firstChild);
+        	}
+        	this.unbind();
+        	this.dom.parentNode.removeChild(this.dom);
+        	this.trigger("destroy");
+    	},
+    	initialize : function(dom){
+        	this.dom = dom;
+        	this.bind();
+    	}
+	});
 
-    dialog.addChild(title);
+	// create dialog instance
+	var dialog = new Dialog(document.createElement("div"));
 
-    dialog.addChild(body);
+	//you can get dialog class like this
+	//var dialog = new (mi.ui("Dialog"))(document.createElement("div"));
 
-    dialog.appendTo(document.body);
+	var title = document.createElement("h3");
+    	title.innerHTML = "title";
 
-    dialog.on("destroy", function(){
-        console.log('dialog destroyed!');
-        // clear all events
-        this.off();
-    });
+	var body = document.createElement("div");
+    	body.innerHTML = "body";
 
-    //1s later execute dialog.destroy
-    $.delay(function(){
-        dialog.destroy();
-    }, 1000);
+    	dialog.addChild(title);
+
+    	dialog.addChild(body);
+
+    	dialog.appendTo(document.body);
+
+    	dialog.on("destroy", function(){
+        	console.log('dialog destroyed!');
+        	// clear all events
+        	this.off();
+    	});
+
+    	//1s later execute dialog.destroy
+    	$.delay(function(){
+        	dialog.destroy();
+    	}, 1000);
 ```
+
 ###create utils
+
 ```javascript
 /**
 * @param {String} toArray
