@@ -71,42 +71,42 @@ mi.library
 
 ##directory
 ```javascript
-    + appliction
-      + core
-        -setup.js  // setup which extension method(s) to support
-      + events
-        - application_core_event.js // application events
-      + utils      
-        -setup.js  // setup which util(s) to support
-      + ui
-        - display_object.js
-      + helpers
-        -setup.js  // setup which helper(s) to support
-      + libraries
-        -setup.js  // setup which librar(y|ies) to support
-      -setup.js    // setup which property to support
-    + system
-      + core
-        - ui.js
-        - util.js
-        - helper.js
-        - library.js
-        - controller.js
-        - model.js
-        - collection.js
-        - router.js
-        - setup.js
-        - mi.js
-      + events
-        - system_core_event.js
-      + utils
-        -setup.js
-      + libraries
-        -setup.js
-      + helpers
-        -setup.js
-      - setup.js
-    - app.js
++ appliction   // extension from system
+  + core
+    -setup.js  // setup which extension method(s) to support
+  + events
+    - application_core_event.js // application events
+  + utils      
+    -setup.js  // setup which util(s) to support
+  + ui
+    - display_object.js
+  + helpers
+    -setup.js  // setup which helper(s) to support
+  + libraries
+    -setup.js  // setup which librar(y|ies) to support
+  -setup.js    // setup which property to support
++ system
+  + core
+    - ui.js          // ui implementations
+    - util.js        // util implementations
+    - helper.js      // helper implementations
+    - library.js     // library implementations
+    - controller.js  // controller implementations
+    - model.js       // model implementations
+    - collection.js  // collection implementations
+    - router.js      // router implementations
+    - setup.js       // setup which implementation(s) to support
+    - mi.js          // the core mi implementations
+  + events
+    - system_core_event.js  // system events
+  + utils
+    -setup.js        // setup which system utils to support
+  + libraries    
+    -setup.js        // setup which system librar(y|ies) to support
+  + helpers
+    -setup.js        // setup which system helper(s) to support
+  - setup.js         // setup which property to support
+- app.js             // app root
 ```
 
 ##example
