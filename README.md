@@ -73,18 +73,18 @@ mi.library
 ```javascript
 + appliction   // extension from system
   + core
-    -setup.js  // setup which extension method(s) to support
+    - setup.js  // setup which extension method(s) to support
   + events
     - application_core_event.js // application events
   + utils      
-    -setup.js  // setup which util(s) to support
+    - setup.js  // setup which util(s) to support
   + ui
     - display_object.js
   + helpers
-    -setup.js  // setup which helper(s) to support
+    - setup.js  // setup which helper(s) to support
   + libraries
-    -setup.js  // setup which librar(y|ies) to support
-  -setup.js    // setup which property to support
+    - setup.js  // setup which librar(y|ies) to support
+  - setup.js    // setup which property to support
 + system
   + core
     - ui.js          // ui implementation
@@ -100,11 +100,11 @@ mi.library
   + events
     - system_core_event.js  // system events
   + utils
-    -setup.js        // setup which system utils to support
+    - setup.js        // setup which system utils to support
   + libraries    
-    -setup.js        // setup which system librar(y|ies) to support
+    - setup.js        // setup which system librar(y|ies) to support
   + helpers
-    -setup.js        // setup which system helper(s) to support
+    - setup.js        // setup which system helper(s) to support
   - setup.js         // setup which property to support
 - app.js             // app root
 ```
