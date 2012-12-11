@@ -13,16 +13,16 @@
 
 
     /**
-    * @name log
-    * @param {Arguments} args  log() is the same as log.log()
-    * @method {Function} info  log.info()
-    * @method {Function} warn  log.warn()
-    * @method {Function} error log.error()
-    * @method {Function} log   log.log()
-    * @return {Function}
-    */
+     * @name log
+     * @param {Arguments} args  log() is the same as log.log()
+     * @method {Function} info  log.info()
+     * @method {Function} warn  log.warn()
+     * @method {Function} error log.error()
+     * @method {Function} log   log.log()
+     * @return {Function}
+     */
     var _log = (function(){
-        var types = "log|info|warn|error".split("|");
+        var types = "log|info|warn|error".split("|"), i= 0, type;
         var _trace = function(){
             var args = arguments;
             if(_trace.enable && args.length){
@@ -35,17 +35,15 @@
                 }
             }
         };
-
-        while(type = types.pop()){
+        while(type = types[i]){
             _trace[type] = (function(type){
                 return function(){
                     this.apply(this, [].slice.call(arguments).concat(type));
                 };
             }(type));
+            i++;
         }
-
         return _trace;
-
     }());
 
     /**
