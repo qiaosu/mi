@@ -1,7 +1,7 @@
 define(function(require){
     var mi = require("../core/mi");
 
-    var _method = mi.util("util");
+    var _method = mi.util("method");
 
     /**
      * wrap a callbacks before method executed

@@ -1,5 +1,6 @@
 define(function(require){
     var mi = require("../core/mi");
+    var _method = mi.util("method");
     /**
      * wrap a callbacks after method executed
      * @name after
@@ -8,7 +9,6 @@ define(function(require){
      * @return {Function}
      */
     mi.util("after", function(method, callback){
-        var _method = mi.util("method");
         return _method(method, callback, "after", this);
     }, true);
 
