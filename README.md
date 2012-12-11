@@ -107,7 +107,7 @@ mi.library
     - copy.js          // convert arguments to array
     - data_to_tree.js  // convert horizontal data to tree
     - date.js          // date util
-    - delay.js         // delay to execute function
+    - delay.js         // delay to execute a function
     - each.js          // iteration an object such as function, object, array or collection
     - filter.js        // filter an array to return user want
     - fx.js            // animation
@@ -117,9 +117,9 @@ mi.library
     - list.js          // convert an array to a list
     - map.js           // map an array or an object
     - method.js        // wrapper method
-    - mix.js           // mix object to another
+    - mix.js           // mix object with another
     - rmb.js           // every three plus ',', such as 123,456,789.00
-    - trim.js          // trim right ans left blank chars
+    - trim.js          // trim right and left blank chars
     - type.js          // get object type
     - setup.js         // setup which system utils to support
   + libraries    
