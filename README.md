@@ -71,7 +71,7 @@ mi.library
 
 ##directory
 ```javascript
-+ appliction   // extension from system
++ appliction    // extension from system
   + core
     - setup.js  // setup which extension method(s) to support
   + events
@@ -87,6 +87,7 @@ mi.library
   - setup.js    // setup which property to support
 + system
   + core
+    - mi.js          // the core mi implementation
     - ui.js          // ui implementation
     - util.js        // util implementation
     - helper.js      // helper implementation
@@ -96,17 +97,37 @@ mi.library
     - collection.js  // collection implementation
     - router.js      // router implementation
     - setup.js       // setup which implementation(s) to support
-    - mi.js          // the core mi implementation
   + events
     - system_core_event.js  // system events
   + utils
-    - setup.js        // setup which system utils to support
+    - after.js         // do something after some method
+    - aop.js           // create an execute queue
+    - array.js         // convert object to array if success
+    - before.js        // do something before some method
+    - copy.js          // convert arguments to array
+    - data_to_tree.js  // convert horizontal data to tree
+    - date.js          // date util
+    - delay.js         // delay to execute function
+    - each.js          // iteration an object such as function, object, array or collection
+    - filter.js        // filter an array to return user want
+    - fx.js            // animation
+    - index_of.js      // search form an object or array
+    - is.js            // check object type
+    - is_class.js      // check instance is mi class
+    - list.js          // convert an array to a list
+    - map.js           // map an array or an object
+    - method.js        // wrapper method
+    - mix.js           // mix object to another
+    - rmb.js           // every three plus ',', such as 123,456,789.00
+    - trim.js          // trim right ans left blank chars
+    - type.js          // get object type
+    - setup.js         // setup which system utils to support
   + libraries    
-    - setup.js        // setup which system librar(y|ies) to support
+    - setup.js         // setup which system librar(y|ies) to support
   + helpers
-    - setup.js        // setup which system helper(s) to support
-  - setup.js         // setup which property to support
-- app.js             // app root
+    - setup.js         // setup which system helper(s) to support
+  - setup.js           // setup which property to support
+- app.js               // app root
 ```
 
 ##example
