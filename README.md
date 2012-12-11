@@ -69,6 +69,46 @@ mi.library
 
 ```
 
+##directory
+```javascript
+    + appliction
+      + core
+        -setup.js  // setup which extension method(s) to support
+      + events
+        - application_core_event.js // application events
+      + utils      
+        -setup.js  // setup which util(s) to support
+      + ui
+        - display_object.js
+      + helpers
+        -setup.js  // setup which helper(s) to support
+      + libraries
+        -setup.js  // setup which librar(y|ies) to support
+      -setup.js    // setup which property to support
+    + system
+      + core
+        - ui.js
+        - util.js
+        - helper.js
+        - library.js
+        - controller.js
+        - model.js
+        - collection.js
+        - router.js
+        - setup.js
+        - mi.js
+      + events
+        - system_core_event.js
+      + utils
+        -setup.js
+      + libraries
+        -setup.js
+      + helpers
+        -setup.js
+      - setup.js
+    - app.js
+```
+
 ##example
 
 ### create Dialog components
