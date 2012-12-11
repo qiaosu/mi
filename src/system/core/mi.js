@@ -119,6 +119,17 @@
     }
 
     /**
+     * create mi class
+     * @param {String} path
+     * @param {Object} value
+     * @return {Object}
+     * @private
+     */
+    function _create(path, value){
+        return _set(path, _mi(value || {}));
+    }
+
+    /**
      * get value by path
      * @param path
      * @return {Object}
@@ -354,6 +365,7 @@
     var _namespace = {
         set : _set,
         get : _get,
+        create: _create,
         log : _log,
         events : _events,
         instances : _instances,

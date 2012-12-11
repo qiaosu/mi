@@ -23,11 +23,81 @@ mi.dispatcher
 //create package
 mi.set
 
+mi.set("mi.ui", {});
+
+mi.set("mi.net", {});
+
+mi.set("mi.display", {});
+
 // get package
 mi.get
 
+var ui = mi.get("mi.ui");
+
+var net = mi.get("mi.net");
+
+var display = mi.get("mi.display");
+
+// create class
+mi.create
+// example
+// create ContextMenu
+mi.create("mi.ui.ContextMenu", {});
+
+// create ContextMenuItem
+mi.create("mi.ui.ContextMenuItem", {});
+
+// create UIComponent
+mi.create("mi.display.UIComponent", {});
+
+// create Sprite
+mi.create("mi.display.Sprite", {}});
+
+// create MovieClip
+mi.create("mi.display.MovieClip", {});
+
+// create URLLoader
+mi.create("mi.net.URLLoader", {});
+
+//create URLRequest
+mi.create("mi.net.URLRequest", {});
+
+
+// get class
+
+var ContextMenu = mi.get("mi.ui.ContextMenu");
+
+var contextMenu = new ContextMenu();
+
+mi.log(contextMenu);
+
+var ContextMenuItem = mi.get("mi.ui.ContextMenuItem");
+
+var contextMenuItem = new ContextMenuItem();
+
+contextMenu.addMenuItem(contextMenuItem);
+
+
+
 //logger
 mi.log
+
+//example
+
+// log, same as log.log
+mi.log(1,2,3);
+
+// log
+mi.log.log(1,2,3);
+
+// info
+mi.log.info(1,2,3);
+
+// error
+mi.log.error(1,2,3);
+
+//warn
+mi.log.warn(1,2,3);
 
 ```
 
