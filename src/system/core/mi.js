@@ -72,6 +72,9 @@
         while (i < len) {
             if (i in array) {
                 last = callback.call(null, last, array[i], i, array);
+                if(last === false){
+                    break;
+                }
             }
             i++
         }
@@ -93,10 +96,7 @@
 
         return _type(path) == "string" ? _parse(path.split("."), function (theObject,key,i,arr){
             if(isGet){
-                if(!theObject[key]){
-                    throw new Error(key + ' is undefined!');
-                }
-                return theObject[key];
+                return theObject[key] ? theObject[key] : false;
             }
             if(isDefine){
                 if(!theObject[key]){
