@@ -6,7 +6,7 @@
     }
 }((function(){
 
-    var _mi, _instances_array = [];
+    var _mi, _instances = [];
 
     /** the event object */
     var _events = {};
@@ -301,7 +301,7 @@
                     if (this.initialize){
                         this.initialize.apply(this, arguments);
                         /** push this to instances array */
-                        _instances_array.push(this);
+                        _instances.push(this);
                     } else {
                         fromSub || isFunction && supr.apply(this, arguments);
                         _constructor.apply(this, arguments);
@@ -356,7 +356,7 @@
         get : _get,
         log : _log,
         events : _events,
-        instances : _instances_array,
+        instances : _instances,
         dispatcher : _dispatcher()
     };
 
