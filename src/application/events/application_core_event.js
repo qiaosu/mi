@@ -4,20 +4,66 @@ define(function(require, exports){
      * @type {Object}
      */
     var ApplicationCoreEvent = {
-        CORE_SETUP_FINISHED: "system_core_setup_finished",
-        HELPER_SETUP_FINISHED: "system_helper_setup_finished",
-        UTIL_SETUP_FINISHED: "system_util_setup_finished",
-        LIBRARY_SETUP_FINISHED: "system_library_setup_finished",
-        MODEL_SETUP_FINISHED: "system_model_setup_finished",
-        CONTROLLER_SETUP_FINISHED: "system_collection_setup_finished",
-        UTIL_SET_FINISHED: "system_core_util_set_finished",
-        LIBRARY_SET_FINISHED: "system_library_set_finished",
-        HELPER_SET_FINISHED:"system_core_helper_set_finished",
-        UI_SET_FINISHED:"system_core_ui_set_finished",
-        MODEL_SET_FINISHED:"system_core_model_set_finished",
-        CONTROLLER_SET_FINISHED:"system_core_controller_set_finished",
-        VIEW_SET_FINISHED:"system_core_view_set_finished",
-        COLLECTION_SET_FINISHED:"system_core_collection_set_finished"
+        /**
+         * applicaiton setup finished event
+         */
+        SETUP_FINISHED: "application_setup_finished",
+        /**
+         * application core setup finished event
+         */
+        CORE_SETUP_FINISHED: "application_core_setup_finished",
+        /**
+         * application helper setup finished event
+         */
+        HELPER_SETUP_FINISHED: "application_helper_setup_finished",
+        /**
+         * application util setup finished event
+         */
+        UTIL_SETUP_FINISHED: "application_util_setup_finished",
+        /**
+         * application library setup finished event
+         */
+        LIBRARY_SETUP_FINISHED: "application_library_setup_finished",
+        /**
+         * application model setup finished event
+         */
+        MODEL_SETUP_FINISHED: "application_model_setup_finished",
+        /**
+         * application collection setup finished event
+         */
+        CONTROLLER_SETUP_FINISHED: "application_collection_setup_finished",
+        /**
+         * application core util set finished event
+         */
+        UTIL_SET_FINISHED: "application_core_util_set_finished",
+        /**
+         * application core library set finished event
+         */
+        LIBRARY_SET_FINISHED: "application_core_library_set_finished",
+        /**
+         * application core helper set finished event
+         */
+        HELPER_SET_FINISHED:"application_core_helper_set_finished",
+        /**
+         * application core ui set finished event
+         */
+        UI_SET_FINISHED:"application_core_ui_set_finished",
+        /**
+         * application core model set finished event
+         */
+        MODEL_SET_FINISHED:"application_core_model_set_finished",
+        /**
+         * application core controller set finished event
+         */
+        CONTROLLER_SET_FINISHED:"application_core_controller_set_finished",
+        /**
+         * application core view set finished event
+         */
+        VIEW_SET_FINISHED:"application_core_view_set_finished",
+        /**
+         * application core collection set finished event
+         */
+        COLLECTION_SET_FINISHED:"application_core_collection_set_finished"
     };
 
     return ApplicationCoreEvent;

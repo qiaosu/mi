@@ -69,5 +69,5 @@ define(function(require, exports){
     require("./data_to_tree");
 
 
-    mi.dispatcher.trigger(SystemCoreEvent.UTIL_SET_FINISHED);
+    mi.dispatcher.trigger(SystemCoreEvent.UTIL_SETUP_FINISHED);
 })

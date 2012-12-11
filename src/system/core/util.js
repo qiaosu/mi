@@ -25,6 +25,8 @@ define(function(require){
                 }
 
                 mi.log.info("utils."+theUtilName + " added"  + (mixed? " and mixed to mi" : "") + " successful!");
+
+                return _utils[theUtilName];
             }
             throw new Error("parameter error!");
         }

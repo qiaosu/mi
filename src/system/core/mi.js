@@ -94,7 +94,7 @@
         return _type(path) == "string" ? _parse(path.split("."), function (theObject,key,i,arr){
             if(isGet){
                 if(!theObject[key]){
-                    throw new Error(key + ' undefined!');
+                    throw new Error(key + ' is undefined!');
                 }
                 return theObject[key];
             }
@@ -117,10 +117,7 @@
      * @return {Object}
      */
     function _set(path, value){
-        if(arguments.length < 2){
-            throw new Error('set must be two arguments, path and value!');
-        }
-        return _package(path, value);
+        return _package(path, value || {});
     }
 
     /**

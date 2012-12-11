@@ -2,6 +2,8 @@ define(function(require){
 
     var mi = require("./mi");
 
+    var SystemCoreEvent = require("../events/system_core_event");
+
     mi.set("library", (function(){
 
         var _libraries = {};
@@ -20,6 +22,8 @@ define(function(require){
             throw new Error('no library name or value to set!');
         }
     }()));
+
+    mi.dispatcher.trigger(SystemCoreEvent.LIBRARY_SET_FINISHED);
 
     mi.log.info("system.core.library set successful!");
 })

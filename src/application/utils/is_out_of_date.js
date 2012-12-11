@@ -3,7 +3,7 @@ define(function(require){
      * the core mi function
      * @type {Function}
      */
-    var _ = require("../../system/core/mi");
+    var mi = require("../../system/core/mi");
     /**
      * @name isOutOfDate
      * @memberOf _
@@ -12,7 +12,7 @@ define(function(require){
      * @param {Number} [days]
      * @return {Number} -1, 0, 1
      */
-    _.util("isOutOfDate", function(dateStart, dateEnd, days){
+    mi.util("isOutOfDate", function(dateStart, dateEnd, days){
         var dateStart = dateStart, dateEnd = dateEnd, days = days || 365;
         dateStart = dateStart.replace(/[-\.]/g, '/');
         dateEnd = dateEnd.replace(/[-\.]/g, '/');
@@ -24,7 +24,7 @@ define(function(require){
         if(timeBetween < 0){
             return -1;
         }
-        if((Math.abs(timeBetween)/3600000/24 + 1) > days){
+        if((Math.abs(timeBetween)/3600000/24) > days){
             return 1;
         }
 

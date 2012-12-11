@@ -10,11 +10,23 @@ define(function(require, exports, module) {
      */
     var mi = require("./system/core/mi");
 
+    var SystemCoreEvent = require("./system/events/system_core_event");
+
+    var ApplicationCoreEvent = require("./application/events/application_core_event");
+
     /**
      * enable console log if console supported
      * @type {Boolean}
      */
     mi.log.enable = true;
+
+    mi.dispatcher.on(SystemCoreEvent.UTIL_SETUP_FINISHED, function(){
+        mi.log('system util setup finished!');
+    })
+
+    mi.dispatcher.on(ApplicationCoreEvent.UTIL_SETUP_FINISHED, function(){
+        mi.log('application util setup finished!');
+    })
 
     /**
      * setup application core which method user want to support
