@@ -6,6 +6,8 @@ define(function(require){
 
     mi.log.info("system.libraries.setup initialize ...");
 
+    require("./jquery");
+
     mi.dispatcher.trigger(SystemCoreEvent.LIBRARY_SETUP_FINISHED);
 
 })

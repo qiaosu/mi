@@ -48,7 +48,7 @@
 
     /**
     * utils function
-    * @param {Object} theObject
+    * @param {String|Object} theObject
     * @return {String} the type of theObject by lowercase
     */
     function _type(theObject){
@@ -65,7 +65,7 @@
     function _parse(arr, callback, root){
         var array = arr || [], len = array.length, i = 0, last = root;
         if (len == 0 && arguments.length == 2) {
-            throw new TypeError()
+            throw new TypeError('namespace parse error, root node must be set!');
         }
         while (i < len) {
             if (i in array) {
@@ -88,7 +88,7 @@
     */
     function _package(path, value, root){
         var args = arguments.length, isGet = false, isDefine = false;
-        if(args == 0){ throw new Error(""); }
+        if(args == 0){ throw new Error("no package arguments!"); }
         if(args == 1){ isGet = true; }
         if(args >= 2){ isDefine = true; }
 
@@ -361,7 +361,6 @@
 
     }());
 
-
     var _namespace = {
         set : _set,
         get : _get,
@@ -372,9 +371,9 @@
         dispatcher : _dispatcher()
     };
 
-    for(var key in _namespace){
-        _package(key, _namespace[key]);
-    }
+    _each(_namespace, function(value, key){
+        _set(key, value);
+    });
 
     return _mi;
 

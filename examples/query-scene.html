@@ -1,16 +1,334 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>app test</title>
+<meta charset="gbk">
+<title>query scene</title>
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.base-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-font-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-function-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-button-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-form-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-table-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-tab-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-paging-1.0.css" />
+
 <style type="text/css">
-    html, body {
-        padding: 0;
-        margin: 0;
-    }
+.mi-form {
+    float:left;
+    padding:0 80px 0 0;
+}
+
+.mi-form .mi-form-item {
+    padding-left:150px;
+}
+.mi-form .mi-label {
+    width:150px;
+    margin-left:-150px;
+}
+
+.mi-form select {
+    width:181px;
+}
+
+.query-box {
+    padding:30px 0 0;
+    margin:20px 10px 0;
+    border:3px solid #ccc;
+    background-color:#fafafa;
+}
+.mi-tab {
+    margin:10px 10px 0;
+}
+
+.page-tool {
+    padding:10px 10px 0 0;
+}
+.page-size {
+    float:right;
+    padding:3px 10px 0 0;
+}
+
+.mi-line-dot-vertical {
+    width:1px;
+    height:80px;
+    padding-bottom:50px;
+    margin-bottom:-50px;
+    background:url("https://i.alipayobjects.com/e/201211/1aRn1D6a7I.png") repeat-y 0 0;
+}
 </style>
 </head>
 <body>
+
+    <div class="query-box fn-clear">
+
+        <form data-current="true" class="mi-form" id="J_QueryByTradeNoForm" data-downloadUrl="/download" data-actionUrl="#" method="post" action="#">
+            <div class="mi-form-item">
+                <label class="mi-label">订单号：</label>
+                <input name="orderId" type="text" value="" class="mi-input" />
+            </div>
+            <div class="mi-form-item">
+                <label class="mi-label">&nbsp;</label>
+                <span id="J_QueryByTradeNoBtn" class="mi-button mi-button-morange">
+                    <input type="submit" class="mi-button-text" value="查询" />
+                </span>
+            </div>
+        </form>
+
+        <div class="mi-line mi-line-dot-vertical fn-left"></div>
+
+        <form class="mi-form" id="J_QueryByDateTypeForm" data-downloadUrl="/download" data-actionUrl="#" method="post" action="#">
+            <div class="mi-form-item">
+                <label class="mi-label">查询类型：</label>
+                <div class="mi-form-text">
+                    <select name="dateType">
+                        <option value="">请选择</option>
+                        <option value="type1" selected>类型一</option>
+                        <option value="type2">类型二</option>
+                        <option value="type3">类型三</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mi-form-item">
+                <label class="mi-label">查询日期：</label>
+                <input name="startDate" type="text" value="2012-12-11" class="mi-input mi-input-date" />
+                <div class="mi-form-spliter">-</div>
+                <input name="endDate" type="text" value="2012-12-20" class="mi-input mi-input-date" />
+            </div>
+            <div class="mi-form-item">
+                <label class="mi-label">&nbsp;</label>
+                <span id="J_QueryByDateTypeBtn" class="mi-button mi-button-morange">
+                    <input type="submit" class="mi-button-text" value="查询" />
+                </span>
+            </div>
+        </form>
+        <div class="mi-line mi-line-dot-vertical fn-left"></div>
+        <form class="mi-form" id="J_QueryByRefundTypeForm" data-downloadUrl="/download" data-actionUrl="#" method="post" action="#">
+            <div class="mi-form-item">
+                <label class="mi-label">退款状态：</label>
+                <div class="mi-form-text">
+                    <select name="refundStatusType">
+                        <option value="">请选择</option>
+                        <option value="all" selected>全部退款</option>
+                        <option value="process">退款处理中</option>
+                        <option value="failure">退款失败</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mi-form-item">
+                <label class="mi-label">查询日期：</label>
+                <input name="statusStartDate" type="text" value="2012-12-11" class="mi-input mi-input-date" />
+                <div class="mi-form-spliter">-</div>
+                <input name="statusEndDate" type="text" value="2012-12-30" class="mi-input mi-input-date" />
+            </div>
+            <div class="mi-form-item">
+                <label class="mi-label">&nbsp;</label>
+                <span id="J_QueryByRefundTypeBtn" class="mi-button mi-button-morange">
+                    <input type="submit" class="mi-button-text" value="查询" />
+                </span>
+            </div>
+        </form>
+
+
+    </div>
+
+
+
+    <div class="mi-tab">
+        <div class="mi-tab-trigger">
+            <ul id="J_triggers">
+                <li class="mi-tab-trigger-item mi-tab-trigger-item-current">
+                    <a data-tabType="all" href="#">所有退款</a>
+                </li>
+                <li class="mi-tab-trigger-item">
+                    <a data-tabType="process">退款处理中</a>
+                </li>
+                <li class="mi-tab-trigger-item">
+                    <a data-tabType="failure" href="#">退款失败</a>
+                </li>
+            </ul>
+            <span class="mi-tab-tool">
+                <a id="J_downloadByExcel" href="#" data-downloadType="excel">Excel下载</a>
+                <em class="ft-bar">|</em>
+                <a id="J_downloadByTxt" href="#" data-downloadType="txt">TXT下载</a>
+            </span>
+        </div>
+        <div id="J_views" class="mi-tab-ctn">
+            <div class="mi-tab-ctn-item mi-tab-ctn-item-current">
+                <div class="mi-table mi-table-border fn-mt10">
+                    <table>
+                        <thead>
+                        <th>序号</th>
+                        <th>姓名</th>
+                        <th>地址</th>
+                        <th>操作</th>
+                        </thead>
+                        <tbody>
+                        <tr class="ui-table-spliter">
+                            <td>1</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        <tr class="ui-table-spliter">
+                            <td>3</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mi-tab-ctn-item">
+                <div class="mi-table mi-table-border fn-mt10">
+                    <table>
+                        <thead>
+                        <th>序号</th>
+                        <th>姓名</th>
+                        <th>地址</th>
+                        <th>操作</th>
+                        </thead>
+                        <tbody>
+                        <tr class="ui-table-spliter">
+                            <td>1</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        <tr class="ui-table-spliter">
+                            <td>3</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mi-tab-ctn-item">
+                <div class="mi-table mi-table-border fn-mt10">
+                    <table>
+                        <thead>
+                        <th>序号</th>
+                        <th>姓名</th>
+                        <th>地址</th>
+                        <th>操作</th>
+                        </thead>
+                        <tbody>
+                        <tr class="ui-table-spliter">
+                            <td>1</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        <tr class="ui-table-spliter">
+                            <td>3</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>吴实</td>
+                            <td>
+                                <p>电话：13000111222</p>
+                                <p>地址：浙江省杭州市西湖区晚唐路567号</p>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-tool fn-clear">
+
+        <div id="J_paging" class="mi-paging mi-paging-text fn-right">
+            <a data-val="1" class="mi-paging-first" href="#">首页</a>
+            <a data-val="2" class="mi-paging-prev" href="#">上一页</a>
+            <span class="mi-paging-info">21 - 40条，共60条</span>
+            <a data-val="4" class="mi-paging-next" href="#">上一页</a>
+            <a data-val="5" class="mi-paging-last" href="#">尾页</a>
+        </div>
+        <div class="page-size">
+            <select id="J_pageSize" name="pageSize">
+                <option value="20" selected>20</option>
+                <option value="40">40</option>
+            </select>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+        araleConfig = {
+            combo_host: 'https://a.alipayobjects.com',
+            combo_path: '/ar/??'
+        }
+    </script>
+    <script type="text/javascript" charset="utf-8" src="https://a.alipayobjects.com/ar/arale.core-1.1.js"></script>
     <script src="http://seajs.org/dist/sea.js?v20121113.js"></script>
     <script>
         seajs.config({
