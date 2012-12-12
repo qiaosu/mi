@@ -50,8 +50,8 @@ mi.create("mi.ui.ContextMenu", {});
 // create ContextMenuItem
 mi.create("mi.ui.ContextMenuItem", {});
 
-// create UIComponent
-mi.create("mi.display.UIComponent", {});
+// create DisplayObject
+mi.create("mi.display.DisplayObject", {});
 
 // create Sprite
 mi.create("mi.display.Sprite", {}});
