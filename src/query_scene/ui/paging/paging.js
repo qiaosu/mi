@@ -1,7 +1,7 @@
 define(function(require){
-    var mi = require("../../system/core/mi");
+    var mi = require("../../../system/core/mi");
 
-    var PagingEvent = require("../events/paging_event");
+    var PagingEvent = require("../../events/paging_event");
 
     return mi.ui("Paging", {
         page: null,

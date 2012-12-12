@@ -1,7 +1,7 @@
 define(function(require){
-    var mi = require("../../system/core/mi");
+    var mi = require("../../../system/core/mi");
 
-    var TabEvent = require("../events/tab_event");
+    var TabEvent = require("../../events/tab_event");
 
     return mi.ui("QueryTypeTab", {
         tab: null,

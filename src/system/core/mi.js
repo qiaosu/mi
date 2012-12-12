@@ -8,6 +8,9 @@
 
     var _mi, _instances = [];
 
+    /** the version of mi */
+    var _version = "0.0.1";
+
     /** the event object */
     var _events = {};
 
@@ -367,6 +370,7 @@
         create: _create,
         log : _log,
         events : _events,
+        version: _version,
         instances : _instances,
         dispatcher : _dispatcher()
     };

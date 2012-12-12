@@ -1,5 +1,6 @@
 define(function(require){
-    var mi = require("../../system/core/mi");
+    var _ = require("../../../system/core/mi");
+    var FormEvent = require("../../events/form_event");
 
     return require("./form").extend({
         /**
@@ -9,19 +10,21 @@ define(function(require){
         addQueryForm:function(){
             this.addField({
                 name:"queryForm",
-                value:"byOrderId",
+                value:"byStatusType",
                 type: "hidden"
             })
         },
         /**
-         * set the original data if user doesn't click submit button
+         * reset the form field value if use doesn't click the submit
          * @return {void}
          */
         resetValue: function(){
-            this.setValue('orderId', this.getValue('orderId'));
+            this.setValue('refundStatusType', this.getValue('refundStatusType'));
+            this.setValue('statusStartDate', this.getValue('statusStartDate'));
+            this.setValue('statusEndDate', this.getValue('statusEndDate'));
         },
         /**
-         * init
+         * init and load aralex.validator.ClassicValidator
          * @return {void}
          */
         init : function(){

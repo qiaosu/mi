@@ -5,6 +5,9 @@
 
 ```javascript
 
+// the version of mi
+mi.version
+
 //base event
 mi.events
 

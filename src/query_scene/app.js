@@ -30,22 +30,22 @@ define(function(require, exports, module) {
     var PagingEvent = require("./events/paging_event");
 
     /** include the ui form manager */
-    var FormManager = require("./ui/form_manager");
+    var FormManager = require("./ui/form/form_manager");
 
     /** include ui trade number form */
-    var TradeNoForm = require("./ui/form_of_trade_number");
+    var TradeNoForm = require("./ui/form/form_of_trade_number");
 
     /** include ui date type form */
-    var DateTypeForm = require("./ui/form_of_date_type");
+    var DateTypeForm = require("./ui/form/form_of_date_type");
 
     /** include ui refund type form */
-    var RefundTypeForm = require("./ui/form_of_refund_type");
+    var RefundTypeForm = require("./ui/form/form_of_refund_type");
 
     /** include ui query type tab */
-    var QueryTypeTab = require("./ui/tab_query_type");
+    var QueryTypeTab = require("./ui/tab/tab_query_type");
 
     /** include ui paging */
-    var Paging = require("./ui/paging");
+    var Paging = require("./ui/paging/paging");
 
 
     var app = function(){

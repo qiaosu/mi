@@ -1,5 +1,5 @@
 define(function(require){
-    var _ = require("../../system/core/mi");
+    var mi = require("../../../system/core/mi");
 
     return require("./form").extend({
         /**
@@ -9,21 +9,19 @@ define(function(require){
         addQueryForm:function(){
             this.addField({
                 name:"queryForm",
-                value:"byDateType",
+                value:"byOrderId",
                 type: "hidden"
             })
         },
         /**
-         * reset form field value if user doesn't click submit button
+         * set the original data if user doesn't click submit button
          * @return {void}
          */
         resetValue: function(){
-            this.setValue('dateType', this.getValue('dateType'));
-            this.setValue('startDate', this.getValue('startDate'));
-            this.setValue('endDate', this.getValue('endDate'));
+            this.setValue('orderId', this.getValue('orderId'));
         },
         /**
-         * init and load aralex.validator.ClassicValidator
+         * init
          * @return {void}
          */
         init : function(){
