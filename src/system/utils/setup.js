@@ -68,6 +68,9 @@ define(function(require, exports){
     /** include util dataToTree */
     require("./data_to_tree");
 
+    /** include uri */
+    require("./uri");
+
 
     mi.dispatcher.trigger(SystemCoreEvent.UTIL_SETUP_FINISHED);
 })
