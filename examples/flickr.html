@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>query scene</title>
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.base-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-font-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-function-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-button-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-form-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-table-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-tab-1.0.css" />
+<link rel="stylesheet" href="https://a.alipayobjects.com/al/alice.components.mi-paging-1.0.css" />
+
+<style type="text/css">
+
+.mi-form-item {
+    float: left;
+    padding-left: 120px;
+}
+
+.mi-form-item .mi-label {
+    margin-left: -120px;
+    width: 120px;
+}
+
+.mi-form select {
+    width:181px;
+}
+
+.query-box {
+    padding:30px 0 0;
+    margin:20px 10px 0;
+    border:3px solid #ccc;
+    background-color:#fafafa;
+}
+
+.mi-line-dot-vertical {
+    width:1px;
+    height:80px;
+    padding-bottom:50px;
+    margin-bottom:-50px;
+    background:url("https://i.alipayobjects.com/e/201211/1aRn1D6a7I.png") repeat-y 0 0;
+}
+</style>
+</head>
+<body>
+
+    <div class="query-box fn-clear">
+
+        <form data-current="true" class="mi-form" id="J_QueryByTradeNoForm" method="post" action="#">
+
+            <div class="mi-form-item">
+                <label class="mi-label">Tags:&nbsp;</label>
+                <input name="orderId" type="text" value="" class="mi-input" />
+            </div>
+
+            <div class="mi-form-item">
+                <label class="mi-label">Tag Mode:&nbsp;</label>
+                <div class="mi-form-text">
+                    <input id="J_modeAll" type="radio" class="mi-radio" name="tagmode" value="all"><label class="mi-radio-label" for="J_modeAll">All</label>  
+                    <input id="J_modeAny" type="radio" class="mi-radio" name="tagmode" value="any"><label class="mi-radio-label" for="J_modeAny">Any</label>
+                </div>
+            </div>
+
+            <div class="mi-form-item">
+                <label class="mi-label">User Id:&nbsp;</label>
+                <input name="orderId" type="text" value="" class="mi-input" />
+            </div>
+
+            <div class="mi-form-item">
+                <label class="mi-label">Lang:&nbsp;</label>
+                <div class="mi-form-text">
+                    <select name="lang">
+                        <option value="zh-hk" selected>zh-hk|繁體中文 (香港)</option>
+                        <option value="en-us">en-us|英語</option>
+                        <option value="de-de">de-de|德语</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mi-form-item">
+                <label class="mi-label">&nbsp;</label>
+                <span id="J_QueryByRefundTypeBtn" class="mi-button mi-button-mblue">
+                    <input type="submit" class="mi-button-text" value="查询" />
+                </span>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div id="J_views">
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+        araleConfig = {
+            combo_host: 'https://a.alipayobjects.com',
+            combo_path: '/ar/??'
+        }
+    </script>
+    <script type="text/javascript" charset="utf-8" src="https://a.alipayobjects.com/ar/arale.core-1.1.js"></script>
+    <script src="http://seajs.org/dist/sea.js?v20121113.js"></script>
+    <script>
+        seajs.config({
+            alias:{
+                'app': '../src/flickr/app'
+            },
+            debug: 2,
+            base: "./"
+        });
+
+        seajs.use("app", function(App){
+            var app = new App();
+        });
+
+    </script>
+</body>
+</html>
