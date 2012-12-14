@@ -28,6 +28,7 @@ define(function(require, exports, module) {
     /**
      * setup application models
      */
+    require("./models/query")
 
     /**
      * setup application views
