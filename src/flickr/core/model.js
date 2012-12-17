@@ -11,7 +11,6 @@ define(function(require){
      * create Application.Model
      */
     mi.create("Model", {
-        _id: 'M' + (new Date()).getTime(),
         attrs: {},
         _backup: {},
         _changed: false,
@@ -20,6 +19,7 @@ define(function(require){
          * 预留接口,自己实现
          */
         initialize: function(attrs, options){
+            this._id = 'M' + (new Date()).getTime();
             this.attrs = this._backup = attrs;
         },
         
