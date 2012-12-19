@@ -26,17 +26,13 @@ define(function(require, exports, module) {
      */
 
     /**
-     * setup application models
-     */
-    require("./models/query")
-
-    /**
-     * setup application models
-     */
-    require("./views/query")
-
-    /**
      * setup application views
+     */
+    var queryView = require("./views/query")
+    var tableView = require("./views/table")
+
+    /**
+     * setup application 
      */
 
     mi.create('App', {

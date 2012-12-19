@@ -16,6 +16,11 @@ define(function(require){
      */
     require("./view");
 
+    /**
+     * application view
+     */
+    require("./route");
+
     mi.dispatcher.trigger(ApplicationCoreEvent.CORE_SETUP_FINISHED);
 
 })

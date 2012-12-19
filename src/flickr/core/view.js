@@ -1,7 +1,7 @@
 define(function(require){
     var mi = require("../../system/core/mi");
 
-    var ModelEvent = require("../events/view_event");
+    var ViewEvent = require("../events/view_event");
 
     delete mi["view"];
 

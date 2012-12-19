@@ -8,14 +8,14 @@ define(function(require){
 	        this.supr(attrs, options);
 	    },
 	    validate: { 
-
+            'tags': /^[\w\W]+$/
 	    }
     });
 
     var queryModel = new QueryModel({
-    	'tags': [],
+    	'tags': '',
     	'tagmode': 'all',
-    	'ids': [],
+    	'ids': '',
     	'lang': 'zh-hk'
     })
 

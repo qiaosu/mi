@@ -66,7 +66,8 @@ define(function(require){
             }
             
             if (!options.silent && this._changed) {
-                _.events.trigger('Changed' + this._id, obj, options);
+                //mi.dispatcher.trigger(SystemCoreEvent.UTIL_SETUP_FINISHED);
+                //_.events.trigger('Changed' + this._id, obj, options);
             }
         },
         
@@ -93,7 +94,7 @@ define(function(require){
         reduce: function(){
             if (this.hasChanged) {
                 this.set(this._backup);
-                _.events.trigger('Reduce' + this._id, this._backup);
+                //_.events.trigger('Reduce' + this._id, this._backup);
             }
         },
         
@@ -104,7 +105,8 @@ define(function(require){
             var rules = this.validate || {};
             for (var attr in attrs) {
                 if (rules[attr] && !attrs[attr].match(rules[attr])) {
-                    _.events.trigger('ValidateError', attr);
+                    mi.dispatcher.trigger(ModelEvent.ValidateError, attr);
+                    //_.events.trigger('ValidateError', attr);
                     return false;
                 }
             }
